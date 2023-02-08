@@ -18,6 +18,7 @@ void setup(){
 }
 
 void draw(){
+  background(255);
   sq1.draw();
   fc1.draw();
 }
