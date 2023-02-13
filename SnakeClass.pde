@@ -1,32 +1,52 @@
 class SnakeClass {
- ArrayList<SquareClass> squares = new ArrayList<SquareClass>();
- int direction, id, posX, posY, newSquarePosX, newSquarePosY,x,y,w,h;
+ ArrayList<Byte> squareDelays = new ArrayList<Byte>();
+ int direction, id, posX, posY,x,y,w,h;
  SquareClass square;
- SnakeClass(int direction,int id, int posX, int posY, SquareClass square ,int newSquarePosX, int newSquarePosY){
+ SnakeClass(int direction,int id, int posX, int posY, SquareClass square){
    this.direction = direction;
    this.id = id;
    this.posX = posX;
    this.posY = posY;
    this.square = square;
-   this.newSquarePosX = newSquarePosX;
-   this.newSquarePosY = newSquarePosY;
   }
   
-  void addTheSquares(int x, int y, int w, int h,int id){
-    this.x = x;
-    this.y = y;
-    this.w = w;
-    this.h = h;
-    this.id = id;
-    SquareClass sc = new SquareClass(x,y,w,h,id);
-    squares.add(sc);
-    
+  void addTheSquares(){
+    squareDelays.add(squareDelays.get(squareDelays.size()));
   }
   
   void draw(){
-    if(squares[0].xPos + squares[0].w && squares[0].xPos > FoodClass.xPos && squares[0].yPos < ){
     
-    }    
+    switch(direction) {
+    case -1: //UP
+      if(posY>0){
+        posY-=square.h;
+      }
+      break;
+    case 1: //Down
+      if(posY<screenHeight){
+        posY+=square.h;
+      }
+      
+      break;
+    case -2: //LEFT
+      if(posX>0){
+        posX-=square.w;
+      }
+      break;
+    case 2: //Right
+      if(posX<screenWidth){
+        posX+=square.w;
+      }
+      break;
+    }
+    
+    square.xPos = posX;
+    square.yPos = posY;
+    square.draw();
+    
+    //if(squares[0].xPos + squares[0].w && squares[0].xPos > FoodClass.xPos && squares[0].yPos < FoodClass[0].yPos){
+    
+    //}    
     
   }
   
