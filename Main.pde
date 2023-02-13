@@ -19,7 +19,7 @@ void setup() {
 }
 
 void draw() {
-  if ((millis()/1000*speed)-movesMoved>0) {
+  if (((millis()*speed)/1000)-movesMoved>0) {
     movesMoved++;
     background(255);
     snake.draw();
