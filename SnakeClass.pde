@@ -2,11 +2,11 @@ class SnakeClass {
  ArrayList<Byte> squareDelays = new ArrayList<Byte>();
  int direction, id, posX, posY,x,y,w,h;
  SquareClass square;
- SnakeClass(int direction,int id, int posX, int posY, SquareClass square){
+ SnakeClass(int direction,int id, SquareClass square){
    this.direction = direction;
    this.id = id;
-   this.posX = posX;
-   this.posY = posY;
+   this.posX = (int) random(screenWidth/square.w);
+   this.posY = (int) random(screenHeight/square.h);
    this.square = square;
   }
   
@@ -23,7 +23,7 @@ class SnakeClass {
       }
       break;
     case 1: //Down
-      if(posY<screenHeight){
+      if(posY+square.h<screenHeight){
         posY+=square.h;
       }
       
@@ -34,7 +34,7 @@ class SnakeClass {
       }
       break;
     case 2: //Right
-      if(posX<screenWidth){
+      if(posX+square.w<screenWidth){
         posX+=square.w;
       }
       break;
