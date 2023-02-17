@@ -21,7 +21,9 @@ class FoodClass{
     
       if(xPos < square.xPos+square.w && xPos+w > square.xPos && yPos < square.yPos+square.h && h + yPos > square.yPos){
        xPos = random(0,screenWidth-w);
+       println(xPos);
        yPos = random(0,screenHeight-h);
+       println(yPos);
       //createFoodFigure(xPos,yPos,w,h);
       //SnakeClass.addLeSquares();
       
