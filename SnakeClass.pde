@@ -19,23 +19,23 @@ class SnakeClass {
       case 1:
         if(square.yPos > 0){
           square.yPos = square.yPos-speed;
-        }
-        break;
+      }
+      break;
       case -1:
         if(direction == -1 && square.yPos < screenHeight - square.h){
           square.yPos = square.yPos+speed;
-        }
-        break;
+      }
+      break;
       case 2:
         if(direction == 2 && square.xPos > 0 ){
           square.xPos = square.xPos-speed;
-        }
-        break;
+      }
+      break;
       case -2:
         if(direction == -2 && square.xPos < screenWidth-square.w){
           square.xPos = square.xPos+speed;
-        }
-        break;
+      }
+      break;
     }
   }
 }
