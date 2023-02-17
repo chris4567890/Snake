@@ -1,5 +1,5 @@
 class DirectionClass {
-  boolean up, down, left, right;
+  //boolean up, down, left, right;
 
   DirectionClass(int direction) {
     setDirection(dir);
