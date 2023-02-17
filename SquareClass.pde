@@ -13,4 +13,5 @@ class SquareClass {
     void draw() {
       rect(xPos, yPos, w, h);
     }
+    
 }
