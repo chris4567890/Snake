@@ -15,28 +15,52 @@ class SnakeClass {
   }
 
   void draw() {
-  switch(direction){
-      case 1:
-        if(square.yPos > 0){
-          square.yPos = square.yPos-speed;
-        }
-        break;
-      case -1:
-        while(direction == -1 && square.yPos < screenHeight - square.h){
-          square.yPos = square.yPos+speed;
-        }
-        break;
-      case 2:
-        while(direction == 2 && square.xPos > 0 ){
-          square.xPos = square.xPos-speed;
-        }
-        break;
-      case -2:
-        while(direction == -2 && square.xPos < screenWidth-square.w){
-          square.xPos = square.xPos+speed;
-          
-        }
-        break;
+    switch(direction) {
+    case -1: //UP
+      if (posY>0) {
+        posY-=square.h;
+      }
+      break;
+    case 1: //Down
+      if (posY+square.h<screenHeight) {
+        posY+=square.h;
+      }
+
+      break;
+    case -2: //LEFT
+      if (posX>0) {
+        posX-=square.w;
+      }
+      break;
+    case 2: //Right
+      if (posX+square.w<screenWidth) {
+        posX+=square.w;
+      }
+      break;
     }
+
+    square.xPos = posX;
+    square.yPos = posY;
+    square.draw();
+
+    SquareClass tempSquare = square;
+    for (int ite = 1; ite < directions.size(); ++ite) {
+      switch(directions.get(ite)) {
+      case -1: //UP
+        tempSquare.yPos -= tempSquare.h;
+        break;
+      case 1: //Down
+        break;
+      case -2: //LEFT
+        break;
+      case 2: //Right
+        break;
+      }
+      tempSquare.draw();
+    }
+
+    //if(squares[0].xPos + squares[0].w && squares[0].xPos > FoodClass.xPos && squares[0].yPos < FoodClass[0].yPos){
+
+    //}
   }
 }
