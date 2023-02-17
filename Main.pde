@@ -17,6 +17,7 @@ void setup() {
   frameRate(60);
 }
 
+<<<<<<< Updated upstream
 void draw() {
   if (((millis()*speed)/1000)-movesMoved>0) {
     ++movesMoved;
@@ -30,4 +31,17 @@ void keyPressed() {
   ControlClass control = new ControlClass(speed);
   control.keyPressed();
   snake.direction = control.direction;
+=======
+void draw(){
+  background(255);
+  sq1.draw();
+  fc1.draw();
+
+  
+}
+
+void keyPressed() {
+  ControlClass control = new ControlClass(sq1, keyCode,speed, screenWidth, screenHeight);
+  control.keyPressed();  
+>>>>>>> Stashed changes
 }

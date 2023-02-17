@@ -6,6 +6,7 @@ class ControlClass {
     this.id = id;
   }
     
+<<<<<<< Updated upstream
    
 
   void keyPressed() {
@@ -24,5 +25,24 @@ class ControlClass {
       break;
     }
         
+=======
+    switch(keyCode){
+      case UP:
+        direction = 1;  
+        break;
+      case DOWN:
+        direction = -1;
+        break;
+      case LEFT:
+        direction = 2;
+        break;
+      case RIGHT:
+        direction = -2;
+        break;
+    }
+    
+    
+    
+>>>>>>> Stashed changes
   }
 }
